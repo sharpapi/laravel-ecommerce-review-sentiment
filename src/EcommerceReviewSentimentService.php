@@ -37,6 +37,11 @@ class EcommerceReviewSentimentService extends SharpApiClient
                 'sharpapi-ecommerce-review-sentiment.api_job_status_polling_wait',
                 180)
         );
+        $this->setUseCustomInterval(
+            (bool) config(
+                'sharpapi-ecommerce-review-sentiment.api_job_status_use_polling_interval',
+                false)
+        );
         $this->setUserAgent('SharpAPILaravelEcommerceReviewSentiment/1.0.0');
     }
 
